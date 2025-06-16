@@ -186,7 +186,7 @@ eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\n// r
   \*****************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n  data() {\n    return {\n      songs: [\n        { id: 1, title: 'Song A', artist: 'Artist 1' },\n        { id: 2, title: 'Song B', artist: 'Artist 2' },\n        { id: 3, title: 'Song C', artist: 'Artist 3' }\n      ]\n    };\n  }\n});\n\n\n//# sourceURL=webpack://musicsite/./src/App.vue?./node_modules/vue-loader/dist/index.js??ruleSet%5B1%5D.rules%5B3%5D.use%5B0%5D");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n  data() {\n    return {\n      songs: []\n    };\n  },\n  async created() {\n    try {\n      const res = await fetch('/api/songs');\n      if (res.ok) {\n        this.songs = await res.json();\n      }\n    } catch (e) {\n      console.error(e);\n    }\n  }\n});\n\n\n//# sourceURL=webpack://musicsite/./src/App.vue?./node_modules/vue-loader/dist/index.js??ruleSet%5B1%5D.rules%5B3%5D.use%5B0%5D");
 
 /***/ }),
 

@@ -11,12 +11,18 @@
 export default {
   data() {
     return {
-      songs: [
-        { id: 1, title: 'Song A', artist: 'Artist 1' },
-        { id: 2, title: 'Song B', artist: 'Artist 2' },
-        { id: 3, title: 'Song C', artist: 'Artist 3' }
-      ]
+      songs: []
     };
+  },
+  async created() {
+    try {
+      const res = await fetch('/api/songs');
+      if (res.ok) {
+        this.songs = await res.json();
+      }
+    } catch (e) {
+      console.error(e);
+    }
   }
 };
 </script>
